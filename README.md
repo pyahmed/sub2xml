@@ -1,2 +1,2 @@
 # sub2xml
-Python to convert subtitles to titles/timeline for Premiere Pro
+Python script to convert subtitles to titles/timeline for Premiere Pro
