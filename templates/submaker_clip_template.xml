@@ -1,0 +1,34 @@
+							<clipitem id="clipitem-0" frameBlend="FALSE">
+								<name>Title_00000</name>
+								<duration>1080000</duration>
+								<start>0</start>
+								<end>0</end>
+								<in>0</in>
+								<out>0</out>
+								<pixelaspectratio>square</pixelaspectratio>
+								<anamorphic>FALSE</anamorphic>
+								<file id="file-0">
+									<pathurl>0</pathurl>
+									<rate>
+										<timebase>25</timebase>
+										<ntsc>FALSE</ntsc>
+									</rate>
+									<media>
+										<video>
+											<duration>18000</duration>
+											<samplecharacteristics>
+												<rate>
+													<timebase>25</timebase>
+													<ntsc>FALSE</ntsc>
+												</rate>
+												<width>0</width>
+												<height>0</height>
+												<anamorphic>FALSE</anamorphic>
+												<pixelaspectratio>square</pixelaspectratio>
+												<fielddominance>none</fielddominance>
+											</samplecharacteristics>
+										</video>
+									</media>
+								</file>
+							</clipitem>
+							

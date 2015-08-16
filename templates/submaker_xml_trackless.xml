@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xmeml>
+<xmeml version="4">
+	<project>
+		<name>mta_sub</name>
+		<children>
+			<sequence id="sequence0">
+				<rate>
+					<timebase>25</timebase>
+					<ntsc>FALSE</ntsc>
+				</rate>
+				<name>main_subtitle_sequence</name>
+				<media>
+					<video>
+						<format>
+							<samplecharacteristics>
+								<rate>
+									<timebase>25</timebase>
+									<ntsc>FALSE</ntsc>
+								</rate>
+								<width>1920</width>
+								<height>1080</height>
+								<anamorphic>FALSE</anamorphic>
+								<pixelaspectratio>square</pixelaspectratio>
+								<fielddominance>upper</fielddominance>
+								<colordepth>24</colordepth>
+							</samplecharacteristics>
+						</format>
+					</video>
+					<audio>
+						<format>
+							<samplecharacteristics>
+								<depth>16</depth>
+								<samplerate>48000</samplerate>
+							</samplecharacteristics>
+						</format>
+						<track TL.SQTrackAudioKeyframeStyle="0" TL.SQTrackAudioDisplayStyle="0" TL.SQTrackShy="0" TL.SQTrackCollapsedHeight="25" TL.SQTrackExpanded="0" MZ.TrackTargeted="1" PannerCurrentValue="0.5" PannerIsInverted="true" PannerKeyframes="" PannerStartKeyframe="-91445760000000000,0.5,0,0,0,0,0,0" PannerName="Balance" currentExplodedTrackIndex="0" totalExplodedTrackCount="2" premiereTrackType="Stereo">
+							<enabled>TRUE</enabled>
+							<locked>FALSE</locked>
+							<outputchannelindex>1</outputchannelindex>
+						</track>
+					</audio>
+				</media>
+			</sequence>
+		</children>
+	</project>
+</xmeml>
