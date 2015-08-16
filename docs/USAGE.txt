@@ -10,3 +10,10 @@ Alternatively you can try to drag & drop the ass-file onto the sub2xml.py-script
 
 Important notes:
 sub2xml will create a FCP-XML file that you can load into Premiere Pro. This file contains references to all the subtitle/prtl-files. The paths in that file are absolute. Premiere Pro will not find the prtl-files if you move the folder. Once you have imported the FCP-XML-file, check that everything was imported correctly and the titles are displayed as expected. It is important that you save your Premiere Pro-project. Upon saving the project, Premiere Pro will embed the prtl-files inside your project-file (prproj) and no longer reference the prtl-files (notice the file-size increase of the prproj-file). You can now even delete the subs/FCP-XML file if you want.
+
+
+Changing template
+-----------------
+
+If you want to change the appearance of the subtitle or even make a new template, make sure that your prtl-file only contains one text-field/line. If you want to have a multi-line field then create the field but only put a few characters in the first line. The reason for this is the way Premiere Pro stores/handles line breaks. It will create two (or more) text-instances within the prtl-file depending on the number of line-breaks. However Premiere will happily load prtl-files with no explicit line-break but text that is clearly too long for a single line and insert the line breaks for you.
+
