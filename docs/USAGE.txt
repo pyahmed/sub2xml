@@ -1,0 +1,12 @@
+How to use sub2xml
+------------------
+
+1) Create a ass-subtitle file, make sure to use UTF-8 encoding. 
+2) Open windows cmd-prompt. Change dir to where the sub2xml.py-script (+ templates) is located
+3) Copy your ass-subtitle to that directory
+4) Run the script via: "sub2xml.py myassfile.ass"
+
+Alternatively you can try to drag & drop the ass-file onto the sub2xml.py-script (works for me).
+
+Important notes:
+sub2xml will create a FCP-XML file that you can load into Premiere Pro. This file contains references to all the subtitle/prtl-files. The paths in that file are absolute. Premiere Pro will not find the prtl-files if you move the folder. Once you have imported the FCP-XML-file, check that everything was imported correctly and the titles are displayed as expected. It is important that you save your Premiere Pro-project. Upon saving the project, Premiere Pro will embed the prtl-files inside your project-file (prproj) and no longer reference the prtl-files (notice the file-size increase of the prproj-file). You can now even delete the subs/FCP-XML file if you want.

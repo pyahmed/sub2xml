@@ -31,10 +31,14 @@ with warnings.catch_warnings():
 
 try:
     from PIL import ImageFont
-    font = ImageFont.truetype("arial.ttf", 46)
+    try:
+        font = ImageFont.truetype("arial.ttf", 46)
+    except IOError:
+        font = ImageFont.truetype("DroidSans.ttf",46) # for testing
 except ImportError:
     print('Error - pillow not found, please install pillow')
     exit()
+
 
 input_sub = sys.argv[1]
 
@@ -105,7 +109,8 @@ def main():
         prtl_fname = 'sub_' + sub_number_str.zfill(6) + ".prtl"
         prtl_abs_fname = output_subs_dir + "//" + prtl_fname
         title, prtl_warning = generate_prtl(sub_text, stl_data, preset)
-        title.write(prtl_abs_fname , encoding='utf-16', xml_declaration=True)
+        # encoding needs to be UTF16 without BOM = UTF-16LE
+        title.write(prtl_abs_fname , encoding='UTF-16LE', xml_declaration=True)
         f_start,f_end = get_time(i)
         clip_entry = generate_clip_entry(f_start, f_end, prtl_fname)
         if prtl_warning:
@@ -159,33 +164,6 @@ def generate_clip_entry(start, end, inp):
     mycliptree.find('end').text = str(end)
     mycliptree.find('in').text = str(start)
     mycliptree.find('out').text = str(end)
-    mycliptree.find('name').text = inp
-    path = output_subs_dir
-    url = path + "/" + inp
-    f = mycliptree.find('file')
-    f.set('id', inp)
-    f.find('pathurl').text = str(url)
-    return(mycliptree)
-
-
-def generate_clip_entry_with_transition(start, end, tr_in, tr_out, inp):
-    '''
-    input start/end-times in frames
-    return xml-object containing clip-entry
-    '''
-    print('Generating: ' + inp)
-    myclip = ET.parse(submaker_clip_trans_template)
-    mycliptree = myclip.getroot()
-    t_in, t_out = mycliptree.findall(".//transitionitem")
-    t_in.find('start').text = str(start -3 )
-    t_in.find('end').text = str(end + 2)
-    t_out.find('start').text = str(start - 3)
-    t_out.find('end').text = str(end + 2)
-    mycliptree.attrib['id']= inp
-    mycliptree.find('start').text = -1
-    mycliptree.find('end').text = -1
-    mycliptree.find('in').text = str(start + 5)
-    mycliptree.find('out').text = str(end + 5)  
     mycliptree.find('name').text = inp
     path = output_subs_dir
     url = path + "/" + inp
