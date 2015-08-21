@@ -1,7 +1,7 @@
 =======
 sub2xml
 =======
-Python script to convert subtitles to titles/timeline for Premiere Pro, inspired by other similar tools, see [1] and  [2]. This script does the following:
+Python script to convert subtitles to titles/timeline for Premiere Pro, inspired by other similar tools, see [1], [2] and [3]. This script does the following:
 
 - create one prtl-file per subtitle
 - create one FCP-XML-file containing the correct start/end times
@@ -12,6 +12,8 @@ The FCP-XML can be imported into Premiere Pro, giving a timeline with all subtit
 [1] http://www.2writers.com/Eddie/PpTitleCreator.htm
 
 [2] https://github.com/ubershmekel/pytitle
+
+[3] https://github.com/SubtitleEdit/subtitleedit/
 
 Limitations
 ------------
